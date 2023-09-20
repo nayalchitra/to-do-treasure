@@ -1,7 +1,7 @@
 
 const images=[
     {
-        image:'https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        image:'https://wallpapercave.com/wp/V8OmdKN.jpg'
     },
     {
         image:'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -68,7 +68,7 @@ const images=[
         image:'https://images.pexels.com/photos/352096/pexels-photo-352096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
-        image:'https://images.pexels.com/photos/243971/pexels-photo-243971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        image:'https://wallpapercave.com/wp/akHTqZe.jpg'
     },
     {
         image:'https://images.pexels.com/photos/220072/pexels-photo-220072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'

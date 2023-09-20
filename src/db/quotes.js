@@ -1,4 +1,4 @@
-const quotes=[
+export const  quotes=[
     {
         quote:'If somebody offers you an amazing opportunity but you are not sure you can do it, say yes, then learn how to do it later',
         author:'Richard Branson'
