@@ -1,4 +1,3 @@
-
 import { useContext, useEffect } from 'react';
 import './App.css';
 import { BrowserContext } from './components/Context/browserContext';
