@@ -1,0 +1,52 @@
+.todo-container{
+    position: absolute;
+    bottom: 7rem;
+    right: 0rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    background-color:skyblue;
+    color: white;
+    width: 20vw;
+    opacity: 0.9;
+    border-radius: 4px;
+    padding: 1rem;
+
+    
+}
+.cancel-btn{
+    color: white;
+    padding: 1px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.input-todo{
+    
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid ;
+    color: white;
+    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+    width: 17rem;
+}
+.input-todo:focus{
+    outline: none;
+}
+
+.list-container{
+    color: white;
+    padding: 1px;
+    word-wrap: break-word;
+
+}
+.todo-label{
+    word-wrap: break-word;
+    width: 100%;
+    font-size: 1.3rem;
+    overflow-wrap: break-word;
+}
+
+.strike-through{
+    text-decoration: line-through;
+}

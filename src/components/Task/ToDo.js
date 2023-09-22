@@ -2,6 +2,7 @@ import React, { Fragment, useContext, useEffect, useState } from 'react'
 import { BrowserContext } from '../Context/browserContext';
 import './ToDo.css';
 import {quotes}  from '../../db/quotes';
+import ToDoList from '../todoList/ToDoList';
 
 
 
@@ -16,7 +17,7 @@ export default function ToDo() {
   const {time,message,name,task, BrowserDispatch} = useContext(BrowserContext);
 
   const [isChecked, setIsChecked] = useState(false);
-
+  const [showTodo, setShowTodo] = useState(false);
 
   useEffect(()=>{
     const isChecked = localStorage.getItem('checkedStatus');
@@ -30,10 +31,18 @@ export default function ToDo() {
       payload:task
     })
 
+    if(new Date().getDate() !== Number(localStorage.getItem('time'))){
+        localStorage.removeItem('task');
+        localStorage.removeItem('todo');
+        localStorage.removeItem('time');
+        localStorage.removeItem('checkedStatus');
+    }
+
   },[])
 
   useEffect(()=>{
     getCurrentTime()
+    // console.log('current date ', localStorage.getItem('time'));
   },[time])
 
   const getCurrentTime = ()=>{
@@ -50,7 +59,7 @@ export default function ToDo() {
       getCurrentTime
     ,1000);
 
-    // const message = hours < 12 ? 'Good Morning' : hours >= 12 && hours <=17 ? 'Good Afternoon' :'Good Evening';
+    
 
       BrowserDispatch({
       type:'TIME',
@@ -84,10 +93,9 @@ export default function ToDo() {
   }
 
   const handleCompleteTaskChange = (e)=>{
-    if(e.target.checked)
-      setIsChecked(isChecked=>!isChecked);
-    else
-      setIsChecked(isChecked=>!isChecked);
+   
+    setIsChecked(isChecked=>!isChecked);
+    
 
     localStorage.setItem('checkedStatus',!isChecked);
   }
@@ -99,6 +107,10 @@ export default function ToDo() {
       })
       localStorage.removeItem('task');
       localStorage.removeItem('checkedStatus')
+  }
+
+  const handleShowTodoList = (e)=>{
+      setShowTodo(!showTodo);
   }
 
   return (
@@ -141,6 +153,12 @@ export default function ToDo() {
         <span className='quote'>{quote} - <cite>{author}</cite></span>
       </div>
 
+      {
+        showTodo && <ToDoList/> 
+      }
+      <div className='btn-container'>
+        <button className='btn' onClick={handleShowTodoList}>ToDo</button>
+      </div>
     </div>
   )
 }
